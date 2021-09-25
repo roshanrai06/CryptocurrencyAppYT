@@ -1324,3 +1324,9 @@ local.properties
 /app/build/tmp/kotlin-classes/debug/com/plcoding/cryptocurrencyappyt/MainActivity.class
 /app/build/tmp/kotlin-classes/debug/META-INF/app_debug.kotlin_module
 /app/build/intermediates/asm_instrumented_project_classes/debug/com/plcoding/cryptocurrencyappyt/presentation/coin_list/CoinsItemAdapter.class
+/app/build/tmp/kapt3/incrementalData/debug/com/plcoding/cryptocurrencyappyt/presentation/coin_list/CoinsItemAdapter.class
+/app/build/tmp/kotlin-classes/debug/com/plcoding/cryptocurrencyappyt/presentation/coin_list/CoinsItemAdapter.class
+/app/build/intermediates/project_dex_archive/debug/out/com/plcoding/cryptocurrencyappyt/presentation/coin_list/CoinsItemAdapter.dex
+/app/build/tmp/kapt3/stubs/debug/com/plcoding/cryptocurrencyappyt/presentation/coin_list/CoinsItemAdapter.java
+/app/build/tmp/kapt3/stubs/debug/com/plcoding/cryptocurrencyappyt/presentation/coin_list/CoinsItemAdapter.kapt_metadata
+/app/build/intermediates/stable_resource_ids_file/debug/stableIds.txt
