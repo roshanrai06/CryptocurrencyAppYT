@@ -1323,3 +1323,4 @@ local.properties
 /app/build/tmp/kotlin-classes/debug/com/plcoding/cryptocurrencyappyt/CoinApplication.class
 /app/build/tmp/kotlin-classes/debug/com/plcoding/cryptocurrencyappyt/MainActivity.class
 /app/build/tmp/kotlin-classes/debug/META-INF/app_debug.kotlin_module
+/app/build/intermediates/asm_instrumented_project_classes/debug/com/plcoding/cryptocurrencyappyt/presentation/coin_list/CoinsItemAdapter.class

@@ -9,11 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.navigation.fragment.findNavController
-import com.plcoding.cryptocurrencyappyt.R
-import com.plcoding.cryptocurrencyappyt.common.Constants
 import com.plcoding.cryptocurrencyappyt.databinding.FragmentCoinListBinding
-import com.plcoding.cryptocurrencyappyt.domain.model.Coin
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -24,7 +20,7 @@ import kotlinx.coroutines.launch
 
  */
 @AndroidEntryPoint
-class CoinListFragment : Fragment(), OnItemClickListener {
+class CoinListFragment : Fragment() {
     private val viewModel: CoinListViewModel by viewModels()
 
 
@@ -36,7 +32,7 @@ class CoinListFragment : Fragment(), OnItemClickListener {
         val binding = FragmentCoinListBinding.inflate(inflater, container, false)
         context ?: return binding.root
         // Set the adapter
-        val adapter = CoinsItemRecyclerViewAdapter(this)
+        val adapter = CoinsItemAdapter()
         binding.recyclerView.adapter = adapter
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -49,13 +45,5 @@ class CoinListFragment : Fragment(), OnItemClickListener {
             }
         }
         return binding.root
-    }
-
-    override fun onItemClick(item: Coin) {
-        val args = Bundle().apply {
-            putString(Constants.PARAM_COIN_ID, item.id)
-        }
-        findNavController().navigate(R.id.action_coinListItemFragment_to_coinDetailsFragment, args)
-
     }
 }

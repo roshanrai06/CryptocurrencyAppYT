@@ -1,16 +1,20 @@
 package com.plcoding.cryptocurrencyappyt.presentation.coin_list
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.plcoding.cryptocurrencyappyt.R
+import com.plcoding.cryptocurrencyappyt.common.Constants
 import com.plcoding.cryptocurrencyappyt.databinding.FragmentCoinListItemsBinding
 import com.plcoding.cryptocurrencyappyt.domain.model.Coin
-import androidx.recyclerview.widget.ListAdapter
 
 
-class CoinsItemRecyclerViewAdapter(private val onItemClickListener: OnItemClickListener) :
+class CoinsItemAdapter :
     ListAdapter<Coin, RecyclerView.ViewHolder>(CoinDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoinViewHolder {
@@ -30,7 +34,11 @@ class CoinsItemRecyclerViewAdapter(private val onItemClickListener: OnItemClickL
         holder.idView.text = coin.name
         holder.contentView.text = coin.symbol
         holder.itemView.setOnClickListener {
-            onItemClickListener.onItemClick(coin)
+            val args = Bundle().apply {
+                putString(Constants.PARAM_COIN_ID, coin.id)
+            }
+            holder.itemView.findNavController()
+                .navigate(R.id.action_coinListItemFragment_to_coinDetailsFragment, args)
         }
     }
 
