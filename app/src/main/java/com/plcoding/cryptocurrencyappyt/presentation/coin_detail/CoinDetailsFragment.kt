@@ -28,9 +28,15 @@ class CoinDetailsFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 coinDetailViewModel.state.collect { coinDetail ->
-                    coinDetail.coinDetail.let {
-                        binding.coinDetailText.text = coinDetail.coinDetail?.description
+                    if (coinDetail.isLoading) {
+                        binding.coinDetailLoading.progressBar.visibility = View.VISIBLE
+
                     }
+                    if (coinDetail.error.isEmpty())
+                        coinDetail.coinDetail.let {
+                            binding.coinDetailLoading.progressBar.visibility = View.GONE
+                            binding.coinDetailText.text = coinDetail.coinDetail?.description
+                        }
                 }
             }
         }
