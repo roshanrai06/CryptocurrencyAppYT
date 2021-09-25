@@ -38,7 +38,11 @@ class CoinListFragment : Fragment() {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.state.collect { result ->
                     if (result.coins.isNotEmpty()) {
+                        binding.coinListLoading.progressBar.visibility = View.GONE
                         adapter.submitList(result.coins)
+                    }
+                    if (result.isLoading) {
+                        binding.coinListLoading.progressBar.visibility = View.VISIBLE
                     }
 
                 }
