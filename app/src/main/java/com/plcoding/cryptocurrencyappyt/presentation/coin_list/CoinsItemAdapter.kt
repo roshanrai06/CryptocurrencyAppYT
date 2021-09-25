@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.plcoding.cryptocurrencyappyt.R
 import com.plcoding.cryptocurrencyappyt.common.Constants
-import com.plcoding.cryptocurrencyappyt.databinding.FragmentCoinListItemsBinding
+import com.plcoding.cryptocurrencyappyt.databinding.CoinListItemsBinding
 import com.plcoding.cryptocurrencyappyt.domain.model.Coin
 
 
@@ -19,7 +19,7 @@ class CoinsItemAdapter :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CoinViewHolder {
         return CoinViewHolder(
-            FragmentCoinListItemsBinding.inflate(
+            CoinListItemsBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -45,7 +45,7 @@ class CoinsItemAdapter :
 
 }
 
-class CoinViewHolder(binding: FragmentCoinListItemsBinding) :
+class CoinViewHolder(binding: CoinListItemsBinding) :
     RecyclerView.ViewHolder(binding.root) {
     val idView: TextView = binding.itemNumber
     val contentView: TextView = binding.content

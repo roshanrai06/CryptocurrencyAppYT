@@ -14,5 +14,5 @@
         android:layout_marginRight="16dp"
         app:layoutManager="LinearLayoutManager"
         tools:context=".presentation.coin_list.CoinListFragment"
-        tools:listitem="@layout/fragment_coin_list_items" />
+        tools:listitem="@layout/coin_list_items" />
 </androidx.constraintlayout.widget.ConstraintLayout>
